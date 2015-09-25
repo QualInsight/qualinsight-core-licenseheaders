@@ -6,7 +6,7 @@
     <version>1.0.0</version>
   </parent>
   <artifactId>qualinsight-core-licenseheaders</artifactId>
-  <version>1.0.0</version>
+  <version>1.0.1-SNAPSHOT</version>
   <name>qualinsight-core-licenseheaders</name>
   <packaging>jar</packaging>
   <description>This project provides license headers for QualInsight projects.</description>
@@ -37,6 +37,6 @@
     <connection>scm:git:git@github.com:QualInsight/qualinsight-core-licenseheaders.git</connection>
     <developerConnection>scm:git:git@github.com:QualInsight/qualinsight-core-licenseheaders.git</developerConnection>
     <url>https://github.com/QualInsight/qualinsight-core-licenseheaders.git</url>
-    <tag>qualinsight-core-licenseheaders-1.0.0</tag>
+    <tag>HEAD</tag>
   </scm>
 </project>
