@@ -1,0 +1,41 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <parent>
+    <groupId>com.qualinsight.core</groupId>
+    <artifactId>qualinsight-core-superparent</artifactId>
+    <version>1.0.0</version>
+  </parent>
+  <artifactId>qualinsight-core-licenseheaders</artifactId>
+  <name>qualinsight-core-licenseheaders</name>
+  <packaging>jar</packaging>
+  <description>This project provides license headers for QualInsight projects.</description>
+  <url>https://github.com/QualInsight/qualinsight-core-licenseheaders</url>
+  <organization>
+    <url>http://www.qualinsight.com/</url>
+    <name>QualInsight</name>
+  </organization>
+  <licenses>
+    <license>
+      <name>The GNU Lesser General Public License, Version 3.0</name>
+      <url>http://www.gnu.org/licenses/lgpl-3.0.txt</url>
+      <distribution>repo</distribution>
+    </license>
+  </licenses>
+  <developers>
+    <developer>
+      <id>pawlakm</id>
+      <name>Michel Pawlak</name>
+      <organization>QualInsight</organization>
+      <organizationUrl>http://www.qualinsight.com/</organizationUrl>
+      <roles>
+        <role>Owner</role>
+      </roles>
+    </developer>
+  </developers>
+  <scm>
+    <connection>scm:git:git@github.com:QualInsight/qualinsight-core-licenseheaders.git</connection>
+    <developerConnection>scm:git:git@github.com:QualInsight/qualinsight-core-licenseheaders.git</developerConnection>
+    <url>https://github.com/QualInsight/qualinsight-core-licenseheaders.git</url>
+    <tag>HEAD</tag>
+  </scm>
+</project>
