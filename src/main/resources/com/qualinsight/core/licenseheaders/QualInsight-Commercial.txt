@@ -1,0 +1,6 @@
+${project}
+Copyright (c) ${period}, ${owner} <${email}> - All Rights Reserved
+${url}
+
+Unauthorized copying of this file, via any medium is strictly prohibited
+Proprietary and confidential
