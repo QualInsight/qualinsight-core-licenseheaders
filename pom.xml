@@ -6,6 +6,7 @@
     <version>1.0.0</version>
   </parent>
   <artifactId>qualinsight-core-licenseheaders</artifactId>
+  <version>1.0.0-SNAPSHOT</version>
   <name>qualinsight-core-licenseheaders</name>
   <packaging>jar</packaging>
   <description>This project provides license headers for QualInsight projects.</description>
