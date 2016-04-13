@@ -1,12 +1,8 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
   <modelVersion>4.0.0</modelVersion>
-  <parent>
-    <groupId>com.qualinsight.core</groupId>
-    <artifactId>qualinsight-core-superparent</artifactId>
-    <version>1.0.0</version>
-  </parent>
+  <groupId>com.qualinsight.core</groupId>
   <artifactId>qualinsight-core-licenseheaders</artifactId>
-  <version>1.0.1-SNAPSHOT</version>
+  <version>2.0.0-SNAPSHOT</version>
   <name>qualinsight-core-licenseheaders</name>
   <packaging>jar</packaging>
   <description>This project provides license headers for QualInsight projects.</description>
@@ -39,4 +35,141 @@
     <url>https://github.com/QualInsight/qualinsight-core-licenseheaders.git</url>
     <tag>HEAD</tag>
   </scm>
+  <properties>
+    <!-- General properties -->
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <!-- Plugin versions setup -->
+    <plugin.maven-compiler-plugin.version>3.3</plugin.maven-compiler-plugin.version>
+    <plugin.nexus-staging-maven-plugin.version>1.6.3</plugin.nexus-staging-maven-plugin.version>
+    <plugin.maven-source-plugin.version>2.2.1</plugin.maven-source-plugin.version>
+    <plugin.maven-javadoc-plugin.version>2.9.1</plugin.maven-javadoc-plugin.version>
+    <plugin.maven-gpg-plugin.version>1.5</plugin.maven-gpg-plugin.version>
+    <plugin.maven-release-plugin.version>2.5</plugin.maven-release-plugin.version>
+    <!-- License properties -->
+    <license.name>QualInsight-LGPL3</license.name>
+    <license.project>${project.name}</license.project>
+    <license.period>${project.inceptionYear}</license.period>
+    <license.owner>${project.organization.name}</license.owner>
+    <license.url>${project.organization.url}</license.url>
+    <license.email />
+  </properties>
+  <build>
+    <pluginManagement>
+      <plugins>
+        <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-compiler-plugin</artifactId>
+          <version>${plugin.maven-compiler-plugin.version}</version>
+          <configuration>
+            <encoding>UTF-8</encoding>
+          </configuration>
+        </plugin>
+        <plugin>
+          <groupId>org.sonatype.plugins</groupId>
+          <artifactId>nexus-staging-maven-plugin</artifactId>
+          <version>${plugin.nexus-staging-maven-plugin.version}</version>
+          <extensions>true</extensions>
+          <configuration>
+            <serverId>ossrh</serverId>
+            <nexusUrl>https://oss.sonatype.org/</nexusUrl>
+            <autoReleaseAfterClose>true</autoReleaseAfterClose>
+          </configuration>
+        </plugin>
+        <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-source-plugin</artifactId>
+          <version>${plugin.maven-source-plugin.version}</version>
+          <executions>
+            <execution>
+              <id>attach-sources</id>
+              <goals>
+                <goal>jar-no-fork</goal>
+              </goals>
+            </execution>
+          </executions>
+        </plugin>
+        <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-javadoc-plugin</artifactId>
+          <version>${plugin.maven-javadoc-plugin.version}</version>
+          <executions>
+            <execution>
+              <id>attach-javadocs</id>
+              <goals>
+                <goal>jar</goal>
+              </goals>
+            </execution>
+          </executions>
+        </plugin>
+        <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-gpg-plugin</artifactId>
+          <version>${plugin.maven-gpg-plugin.version}</version>
+          <executions>
+            <execution>
+              <id>sign-artifacts</id>
+              <phase>verify</phase>
+              <goals>
+                <goal>sign</goal>
+              </goals>
+            </execution>
+          </executions>
+        </plugin>
+        <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-release-plugin</artifactId>
+          <version>${plugin.maven-release-plugin.version}</version>
+          <configuration>
+            <autoVersionSubmodules>true</autoVersionSubmodules>
+            <useReleaseProfile>false</useReleaseProfile>
+            <releaseProfiles>release</releaseProfiles>
+            <goals>deploy</goals>
+          </configuration>
+        </plugin>
+      </plugins>
+    </pluginManagement>
+    <plugins>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-release-plugin</artifactId>
+      </plugin>
+    </plugins>
+  </build>
+  <distributionManagement>
+    <snapshotRepository>
+      <id>ossrh</id>
+      <url>https://oss.sonatype.org/content/repositories/snapshots</url>
+    </snapshotRepository>
+    <repository>
+      <id>ossrh</id>
+      <url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url>
+    </repository>
+  </distributionManagement>
+  <profiles>
+    <profile>
+      <id>release</id>
+      <activation>
+      </activation>
+      <build>
+        <plugins>
+          <plugin>
+            <groupId>org.sonatype.plugins</groupId>
+            <artifactId>nexus-staging-maven-plugin</artifactId>
+          </plugin>
+          <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-source-plugin</artifactId>
+          </plugin>
+          <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-javadoc-plugin</artifactId>
+          </plugin>
+          <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-gpg-plugin</artifactId>
+          </plugin>
+        </plugins>
+      </build>
+    </profile>
+  </profiles>
 </project>
